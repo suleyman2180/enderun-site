@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400">
+  <defs>
+    <linearGradient id="emeraldDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064E3B"/>
+      <stop offset="50%" stop-color="#022C22"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="emeraldGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6EE7B7"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="640" height="400" rx="16" fill="url(#emeraldDark)" stroke="url(#emeraldGlow)" stroke-width="2"/>
+
+  <!-- Warm Tea Steam Lines -->
+  <path d="M 320,130 C 310,110 330,90 320,70" fill="none" stroke="#6EE7B7" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <path d="M 300,130 C 290,110 310,90 300,70" fill="none" stroke="#6EE7B7" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <path d="M 340,130 C 330,110 350,90 340,70" fill="none" stroke="#6EE7B7" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- Badge -->
+  <rect x="220" y="30" width="200" height="32" rx="16" fill="rgba(16, 185, 129, 0.15)" stroke="url(#emeraldGlow)" stroke-width="1"/>
+  <text x="320" y="51" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" fill="#6EE7B7" text-anchor="middle" letter-spacing="2">☕ GELENEKSEL İKRAM</text>
+
+  <!-- Title -->
+  <text x="320" y="175" font-family="'Cinzel', serif" font-size="28" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">
+    GELENEKSEL İKRAM GECESİ
+  </text>
+  <text x="320" y="210" font-family="'Cinzel', serif" font-size="20" font-weight="700" fill="url(#emeraldGlow)" text-anchor="middle">
+    Sıcak Helva &amp; Taze Çay İkramı
+  </text>
+
+  <!-- Description -->
+  <text x="320" y="255" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" fill="#94A3B8" text-anchor="middle">
+    Büyük etkinlik sonrası tüm talebelere geleneksel sıcak helva ikramı
+  </text>
+
+  <!-- Event Details Pills -->
+  <g transform="translate(140, 310)">
+    <rect x="0" y="0" width="110" height="38" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+    <text x="55" y="23" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">📅 Cuma Akşamı</text>
+    
+    <rect x="125" y="0" width="110" height="38" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+    <text x="180" y="23" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">⏰ 21:00</text>
+    
+    <rect x="250" y="0" width="110" height="38" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+    <text x="305" y="23" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#6EE7B7" text-anchor="middle">📍 Enderun Yemekhanesi</text>
+  </g>
+</svg>

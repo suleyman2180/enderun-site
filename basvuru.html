@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 - 2027 Ön Kayıt Başvuru Formu | Ahmediye Enderun Talebe Yurdu (İzmir Bornova)</title>
+  <meta name="description" content="Ahmediye Enderun Talebe Yurdu 2026-2027 eğitim öğretim yılı AÖL lise ön kayıt ve mülakat başvuru formu.">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .wizard-steps-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+    .wizard-steps-header::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 15%;
+      right: 15%;
+      height: 2px;
+      background: var(--border-light);
+      z-index: 1;
+    }
+    .wizard-step-indicator {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .step-circle {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--bg-card-solid);
+      border: 2px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: var(--text-muted);
+      transition: all 0.3s;
+    }
+    .wizard-step-indicator.active .step-circle {
+      border-color: var(--cyan-accent);
+      background: var(--royal-blue);
+      color: #fff;
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+    }
+    .wizard-step-indicator.completed .step-circle {
+      border-color: var(--gold-500);
+      background: var(--gold-500);
+      color: #070d1f;
+    }
+    .step-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .wizard-step-indicator.active .step-label {
+      color: var(--cyan-accent);
+    }
+    
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 7, 18, 0.92);
+      backdrop-filter: blur(20px);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+    .modal-card {
+      background: var(--bg-surface);
+      border: 2px solid var(--gold-500);
+      border-radius: var(--radius-xl);
+      max-width: 580px;
+      width: 100%;
+      padding: 3rem 2.5rem;
+      text-align: center;
+      box-shadow: var(--shadow-lg), 0 0 50px rgba(212, 175, 55, 0.25);
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/logo.svg" alt="Ahmediye Enderun Logosu">
+      </a>
+      <div class="nav-pill-container">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Giriş</a></li>
+          <li><a href="teskilat.html" class="nav-link">Teşkilat</a></li>
+          <li><a href="kulupler.html" class="nav-link">Kulüplerimiz</a></li>
+          <li><a href="etkinlikler.html" class="nav-link">Aylık Pano</a></li>
+          <li><a href="galeri.html" class="nav-link">Galeri</a></li>
+          <li><a href="veli-gorusleri.html" class="nav-link">Veli Görüşleri</a></li>
+          <li><a href="sss.html" class="nav-link">S.S.S.</a></li>
+        </ul>
+      </div>
+      <div class="nav-actions">
+        <a href="basvuru.html" class="btn btn-primary btn-sm active">Ön Kayıt Başvuru</a>
+        <a href="kiosk.html" class="btn btn-kiosk btn-sm" target="_blank">📺 Pano</a>
+        <button class="mobile-toggle" aria-label="Menüyü Aç/Kapat">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <span class="badge-1972">2026 - 2027 EĞİTİM DÖNEMİ</span>
+      <h1 style="color: #fff; margin: 0.8rem 0;"><span class="gold-gradient">Ön Kayıt &amp; Mülakat Başvurusu</span></h1>
+      <p style="max-width: 650px; margin: 0 auto; color: #cbd5e1;">
+        Açık Öğretim Lisesi (AÖL) talebelerimiz için Ahmediye Enderun Talebe Yurdu ön kayıt formu.
+      </p>
+      <div class="breadcrumb-nav">
+        <a href="index.html">Ana Sayfa</a>
+        <span class="breadcrumb-separator">/</span>
+        <span style="color: var(--gold-400);">Ön Kayıt</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section class="section-padding">
+    <div class="container container-narrow">
+      
+      <div class="app-form-wrapper">
+        
+        <!-- Step Indicators (3 Adım) -->
+        <div class="wizard-steps-header">
+          <div class="wizard-step-indicator active">
+            <div class="step-circle">1</div>
+            <span class="step-label">Talebe Bilgileri</span>
+          </div>
+          <div class="wizard-step-indicator">
+            <div class="step-circle">2</div>
+            <span class="step-label">Veli Bilgileri</span>
+          </div>
+          <div class="wizard-step-indicator">
+            <div class="step-circle">3</div>
+            <span class="step-label">Onay &amp; Gönder</span>
+          </div>
+        </div>
+
+        <!-- Grade Eligibility Alert -->
+        <div style="background: rgba(212, 175, 55, 0.1); border: 1px solid var(--gold-border); border-radius: var(--radius-md); padding: 1rem 1.4rem; margin-bottom: 2rem; display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 1.5rem;">ℹ️</span>
+          <div style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.5;">
+            <strong>Kabul Şartı:</strong> Yurdumuza yalnızca <strong>9, 10 ve 11. sınıf</strong> (AÖL 1 ila 6. Dönem) düzeyindeki talebeler kabul edilmektedir. <em>12. sınıf / YKS adayları kabul edilmez.</em>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <form id="enderunAppForm">
+          
+          <!-- ═══ STEP 1: Talebe Bilgileri ═══ -->
+          <div class="wizard-step-panel" style="display: block;">
+            <h3 style="color: #fff; font-size: 1.35rem; margin-bottom: 1.5rem;">1. Adım: Talebe Temel Bilgileri</h3>
+            
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="ogrenciAdSoyad">Talebenin Adı ve Soyadı <span class="req">*</span></label>
+                <input type="text" id="ogrenciAdSoyad" class="form-input" placeholder="Örn: Mehmet Fatih" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="ogrenciTc">T.C. Kimlik Numarası <span class="req">*</span></label>
+                <input type="text" id="ogrenciTc" class="form-input" maxlength="11" placeholder="11 haneli T.C. No" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="ogrenciOkul">Okul Durumu <span class="req">*</span></label>
+                <select id="ogrenciOkul" class="form-select" required>
+                  <option value="aol" selected>Açık Öğretim Lisesi (AÖL) Kayıtlı / Adayı</option>
+                  <option value="diger">Diğer Lise (AÖL Geçiş Adayı)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="ogrenciSinif">Sınıf / Dönem Düzeyi (Sadece 9, 10, 11) <span class="req">*</span></label>
+                <select id="ogrenciSinif" class="form-select" required>
+                  <option value="">Seçiniz...</option>
+                  <option value="1-2">9. Sınıf (1 - 2. Dönem)</option>
+                  <option value="3-4">10. Sınıf (3 - 4. Dönem)</option>
+                  <option value="5-6">11. Sınıf (5 - 6. Dönem)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="ogrenciTelefon">Talebe Cep Telefonu</label>
+                <input type="tel" id="ogrenciTelefon" class="form-input" placeholder="0 (5XX) XXX XX XX">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="ogrenciEposta">E-Posta Adresi</label>
+                <input type="email" id="ogrenciEposta" class="form-input" placeholder="ornek@gmail.com">
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; margin-top: 2rem;">
+              <button type="button" class="btn btn-gold btn-wizard-next">Veli Bilgilerine Geç →</button>
+            </div>
+          </div>
+
+          <!-- ═══ STEP 2: Veli Bilgileri ═══ -->
+          <div class="wizard-step-panel" style="display: none;">
+            <h3 style="color: #fff; font-size: 1.35rem; margin-bottom: 1.5rem;">2. Adım: Veli &amp; İletişim Bilgileri</h3>
+            
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="veliAdSoyad">Velinin Adı ve Soyadı <span class="req">*</span></label>
+                <input type="text" id="veliAdSoyad" class="form-input" placeholder="Örn: Ahmet Bey" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="veliYakinlik">Yakınlık Derecesi <span class="req">*</span></label>
+                <select id="veliYakinlik" class="form-select" required>
+                  <option value="">Seçiniz...</option>
+                  <option value="baba">Baba</option>
+                  <option value="anne">Anne</option>
+                  <option value="vasi">Yasal Vasi</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="veliTelefon">Veli Cep Telefonu <span class="req">*</span></label>
+                <input type="tel" id="veliTelefon" class="form-input" placeholder="0 (5XX) XXX XX XX" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="veliAdres">İkametgah Şehir / İlçe <span class="req">*</span></label>
+                <input type="text" id="veliAdres" class="form-input" placeholder="Örn: İzmir / Bornova veya Manisa / Yunusemre" required>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+              <button type="button" class="btn btn-secondary btn-wizard-prev">← Geri</button>
+              <button type="button" class="btn btn-gold btn-wizard-next">Son Onaya Geç →</button>
+            </div>
+          </div>
+
+          <!-- ═══ STEP 3: Onay ve Gönder ═══ -->
+          <div class="wizard-step-panel" style="display: none;">
+            <h3 style="color: #fff; font-size: 1.35rem; margin-bottom: 1.5rem;">3. Adım: Şartlar &amp; Başvuruyu Tamamla</h3>
+            
+            <div style="background: rgba(6, 11, 24, 0.7); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 1.5rem;">
+              <h4 style="color: var(--gold-300); margin-bottom: 0.8rem;">Ahmediye Enderun Kabul İlkeleri</h4>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.88rem; color: #cbd5e1;">
+                <li>✦ <strong>Mülakat Süreci:</strong> Başvurunun ardından veli ve talebe İzmir Bornova yurdumuzda yüz yüze mülakata davet edilir.</li>
+                <li>✦ <strong>Kulüp İntisabı:</strong> Kulüp seçimi ön kayıt sırasında yapılmaz; mülakat ve oryantasyon sürecinden sonra talebenin kabiliyetine göre belirlenir.</li>
+                <li>✦ <strong>Telefon Disiplini:</strong> Çalışma ve etüt saatlerinde telefon kullanım kısıtlamasına uyulması esastır.</li>
+              </ul>
+            </div>
+
+            <div class="form-group full-width" style="margin-bottom: 1.5rem;">
+              <label class="form-checkbox-group">
+                <input type="checkbox" id="onayKural" required>
+                <span>Yurt kurallarını, AÖL etüt nizamını ve kabul ilkelerini kabul ediyorum.</span>
+              </label>
+            </div>
+
+            <div class="form-group full-width" style="margin-bottom: 1.5rem;">
+              <label class="form-checkbox-group">
+                <input type="checkbox" id="onayKvkk" required>
+                <span>KVKK kapsamında bilgilerimin mülakat değerlendirmesinde işlenmesini onaylıyorum.</span>
+              </label>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+              <button type="button" class="btn btn-secondary btn-wizard-prev">← Geri</button>
+              <button type="submit" class="btn btn-primary btn-lg">🚀 Ön Kayıt Başvurusunu Tamamla</button>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Success Modal -->
+  <div id="successModal" class="modal-overlay">
+    <div class="modal-card">
+      <div style="font-size: 3.5rem; margin-bottom: 1rem;">🎉</div>
+      <span class="badge-1972" style="margin-bottom: 1rem;">BAŞVURUNUZ ALINDI</span>
+      <h2 style="color: #fff; font-size: 1.8rem; margin-bottom: 0.6rem;">Tebrikler, <span id="modalStudentName" class="gold-gradient">Talebe</span>!</h2>
+      <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;">
+        Ahmediye Enderun Talebe Yurdu (İzmir Bornova) 2026-2027 ön kayıt başvurunuz başarıyla alınmıştır.
+      </p>
+
+      <div style="background: rgba(13, 22, 45, 0.9); border: 1.5px dashed var(--gold-500); border-radius: var(--radius-md); padding: 1.2rem; margin-bottom: 1.8rem;">
+        <span style="font-size: 0.8rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px;">BAŞVURU TAKİP NUMARANIZ</span>
+        <div id="modalRefCode" style="font-family: 'Cinzel', monospace; font-size: 1.8rem; font-weight: 800; color: var(--gold-300); letter-spacing: 2px; margin-top: 4px;">END-2026-84920</div>
+      </div>
+
+      <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 2rem;">
+        İdaremiz en kısa sürede velinizle iletişime geçerek mülakat randevusunu teyit edecektir.
+      </p>
+
+      <div style="display: flex; justify-content: center; gap: 1rem;">
+        <a href="index.html" class="btn btn-primary btn-sm">Ana Sayfaya Dön</a>
+        <button onclick="window.print()" class="btn btn-secondary btn-sm">🖨️ Başvuru Belgesini Yazdır</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-about">
+          <img src="assets/images/logo.svg" alt="Ahmediye Enderun Logosu">
+          <p style="font-size: 0.92rem; color: #94a3b8;">
+            Ahmediye Enderun Talebe Yurdu (Kuruluş 1972 • İzmir Bornova); Açık Öğretim Lisesi (AÖL) talebelerine Osmanlı Enderun mektebi pedagojisini kazandırır.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Hızlı Bağlantılar</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="teskilat.html">Teşkilat &amp; Kültür</a></li>
+            <li><a href="kulupler.html">Kulüplerimiz</a></li>
+            <li><a href="etkinlikler.html">Aylık Pano</a></li>
+            <li><a href="galeri.html">Fotoğraf Galerisi</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>4 İhtisas Kulübü</h4>
+          <ul class="footer-links">
+            <li><a href="kulupler.html#izbitech">⚡ İzbitech</a></li>
+            <li><a href="kulupler.html#ahsan">🎨 Ahsan</a></li>
+            <li><a href="kulupler.html#ahenkk">📚 Ahenkk</a></li>
+            <li><a href="kulupler.html#soset">🏕️ Soset</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>İletişim &amp; Lokasyon</h4>
+          <div class="footer-contact-item"><span>📍 Bornova / İzmir</span></div>
+          <div class="footer-contact-item"><span>🗺️ <a href="https://share.google/NlF2BBn75qU1keAN2" target="_blank" style="color: var(--cyan-accent);">Google Haritalar</a></span></div>
+          <div class="footer-contact-item"><span>📞 +90 (232) 555 19 72</span></div>
+          <div class="footer-contact-item"><span>✉️ bilgi@enderun.org.tr</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 1972 - 2026 Ahmediye Enderun Talebe Yurdu • İzmir / Bornova. Tüm hakları saklıdır.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/basvuru.js"></script>
+</body>
+</html>

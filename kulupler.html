@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kulüplerimiz | Ahmediye Enderun Talebe Yurdu (İzmir Bornova)</title>
+  <meta name="description" content="Ahmediye Enderun Talebe Yurdu bünyesindeki 4 kulüp: İzbitech Teknoloji, Ahsan Sanat, Ahenkk Edebiyat ve Soset Doğa & Spor.">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script>
+    // Akıllı Uzantı Çözücü (.png, .jpeg, .jpg, .webp, .svg otomatik dener)
+    window.addEventListener('error', function(e) {
+      if (e.target && e.target.tagName === 'IMG') {
+        var img = e.target;
+        var src = img.getAttribute('src');
+        if (!src || src.indexOf('data:') === 0 || src.indexOf('http') === 0) return;
+        var exts = ['.png', '.jpeg', '.jpg', '.webp', '.svg'];
+        var tried = (img.dataset.triedExts || '').split(',').filter(Boolean);
+        var lastDot = src.lastIndexOf('.');
+        if (lastDot === -1) return;
+        var currentExt = src.substring(lastDot).toLowerCase();
+        if (tried.indexOf(currentExt) === -1) tried.push(currentExt);
+        var nextExt = null;
+        for (var i = 0; i < exts.length; i++) {
+          if (tried.indexOf(exts[i]) === -1) { nextExt = exts[i]; break; }
+        }
+        if (nextExt) {
+          tried.push(nextExt);
+          img.dataset.triedExts = tried.join(',');
+          img.src = src.substring(0, lastDot) + nextExt;
+        }
+      }
+    }, true);
+  </script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/logo.svg" alt="Ahmediye Enderun Logosu">
+      </a>
+      <div class="nav-pill-container">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Giriş</a></li>
+          <li><a href="teskilat.html" class="nav-link">Teşkilat</a></li>
+          <li><a href="kulupler.html" class="nav-link active">Kulüplerimiz</a></li>
+          <li><a href="etkinlikler.html" class="nav-link">Aylık Pano</a></li>
+          <li><a href="galeri.html" class="nav-link">Galeri</a></li>
+          <li><a href="veli-gorusleri.html" class="nav-link">Veli Görüşleri</a></li>
+          <li><a href="sss.html" class="nav-link">S.S.S.</a></li>
+        </ul>
+      </div>
+      <div class="nav-actions">
+        <a href="basvuru.html" class="btn btn-primary btn-sm">Ön Kayıt Başvuru</a>
+        <a href="kiosk.html" class="btn btn-kiosk btn-sm" target="_blank">📺 Pano</a>
+        <button class="mobile-toggle" aria-label="Menüyü Aç/Kapat">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <span class="badge-1972">ÖĞRENCİ KULÜPLERİ</span>
+      <h1 style="color: #fff; margin: 0.8rem 0;"><span class="gold-gradient">Enderun Kulüplerimiz</span></h1>
+      <p style="max-width: 650px; margin: 0 auto; color: #cbd5e1;">
+        Talebelerimizin fıtrî kabiliyetlerini keşfeden, ilim, sanat, edebiyat, teknoloji ve sporu harmanlayan 4 ihtisas kulübümüz.
+      </p>
+      <div class="breadcrumb-nav">
+        <a href="index.html">Ana Sayfa</a>
+        <span class="breadcrumb-separator">/</span>
+        <span style="color: var(--gold-400);">Kulüplerimiz</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Navigation Pills -->
+  <section style="padding: 1.2rem 0; background: rgba(10, 17, 36, 0.4); border-bottom: 1px solid var(--border-light);">
+    <div class="container" style="display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap;">
+      <a href="#izbitech" class="btn btn-secondary btn-sm" style="border-color: rgba(0, 242, 254, 0.4); color: var(--cyan-accent);">⚡ İZBİTECH (Teknoloji)</a>
+      <a href="#ahsan" class="btn btn-secondary btn-sm" style="border-color: var(--gold-border); color: var(--gold-300);">🎨 AHSAN (Sanat)</a>
+      <a href="#ahenkk" class="btn btn-secondary btn-sm" style="border-color: rgba(251, 146, 60, 0.4); color: #fb923c;">📚 AHENKK (Edebiyat)</a>
+      <a href="#soset" class="btn btn-secondary btn-sm" style="border-color: rgba(16, 185, 129, 0.4); color: #34d399;">🏕️ SOSET (Doğa &amp; Spor)</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       1. İZBİTECH KULÜBÜ (TEKNOLOJİ)
+       ═══════════════════════════════════════════ -->
+  <section id="izbitech" class="section-padding">
+    <div class="container">
+      <div class="spotlight-grid">
+        <div style="text-align: center;">
+          <img src="assets/images/clubs/izbitech.png" alt="İzbitech Kulübü Logosu" style="max-width: 260px; margin: 0 auto; filter: drop-shadow(0 10px 30px rgba(0,242,254,0.3));">
+        </div>
+
+        <div>
+          <span class="section-tag" style="background: rgba(0, 242, 254, 0.15); border-color: rgba(0, 242, 254, 0.3); color: #38bdf8;">Teknoloji, Kodlama &amp; İnovasyon</span>
+          <h2 style="font-size: 2.2rem; color: #fff; margin: 0.4rem 0;">
+            İZBİTECH <span class="cyan-gradient">KULÜBÜ</span>
+          </h2>
+          <div style="color: var(--cyan-accent); font-weight: 700; font-size: 1.05rem; margin-bottom: 1.2rem;">
+            “Geleceği Seyreden Değil, Geliştiren Nesil”
+          </div>
+
+          <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 1.2rem;">
+            İzbitech Teknoloji Kulübü; talebelerimizin algoritmik düşünme, modern yazılım mimarisi, 3D modelleme ve robotik sistemleri öğrenmesini amaçlayan ihtisas kulübüdür.
+          </p>
+
+          <div class="hardware-inventory-grid">
+            <div class="hardware-item" style="border-color: rgba(0, 242, 254, 0.3);">
+              <strong style="color: #38bdf8;">🖨️ 3D Modelleme &amp; Baskı</strong>
+              <p>3 boyutlu parça tasarımı, mekanik çizim ve prototip üretimi.</p>
+            </div>
+            <div class="hardware-item" style="border-color: rgba(0, 242, 254, 0.3);">
+              <strong style="color: #38bdf8;">💻 Yazılım &amp; Algoritma</strong>
+              <p>Programlama temelleri, web teknolojileri ve proje geliştirme.</p>
+            </div>
+            <div class="hardware-item" style="border-color: rgba(0, 242, 254, 0.3);">
+              <strong style="color: #38bdf8;">🥽 Sanal Gerçeklik (VR)</strong>
+              <p>Simülasyon, eğitim teknolojileri ve interaktif deneyimler.</p>
+            </div>
+            <div class="hardware-item" style="border-color: rgba(0, 242, 254, 0.3);">
+              <strong style="color: #38bdf8;">🛸 Robotik &amp; Havacılık</strong>
+              <p>Mikrodenetleyici kodlama, robotik ve drone pilotaj çalışmaları.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       2. AHSAN SANAT KULÜBÜ
+       ═══════════════════════════════════════════ -->
+  <section id="ahsan" class="section-padding section-alt">
+    <div class="container">
+      <div class="spotlight-grid">
+        <div>
+          <span class="section-tag">Geleneksel &amp; Çağdaş Sanatlar</span>
+          <h2 style="font-size: 2.2rem; color: #fff; margin: 0.4rem 0;">
+            AHSAN <span class="gold-gradient">SANAT KULÜBÜ</span>
+          </h2>
+          <div style="color: var(--gold-400); font-weight: 700; font-size: 1.05rem; margin-bottom: 1.2rem;">
+            “Kötü resim yoktur, Bakamayan göz vardır.”
+          </div>
+
+          <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 1.2rem;">
+            Ahsan Sanat Kulübü; talebelerimizi Osmanlı tezhip, hüsn-i hat ve ebru sanatlarının incelikleriyle buluşturur. Sahne sanatları ve görsel tasarım atölyeleriyle estetik idraki en üst seviyeye taşır.
+          </p>
+
+          <div class="hardware-inventory-grid">
+            <div class="hardware-item" style="border-color: var(--gold-border);">
+              <strong style="color: var(--gold-300);">✒️ Hüsn-i Hat &amp; Kaligrafi</strong>
+              <p>Harflerin estetiği ve kamış kalem ile kadim yazı meşki.</p>
+            </div>
+            <div class="hardware-item" style="border-color: var(--gold-border);">
+              <strong style="color: var(--gold-300);">🎨 Ebru Sanatı</strong>
+              <p>Su üzerine nakşedilen kadim renklerin ahengi ve sabır terbiyesi.</p>
+            </div>
+            <div class="hardware-item" style="border-color: var(--gold-border);">
+              <strong style="color: var(--gold-300);">🎭 Tiyatro &amp; Sahne</strong>
+              <p>Diksiyon, hitabet, sahne duruşu ve tarihi piyes çalışmaları.</p>
+            </div>
+            <div class="hardware-item" style="border-color: var(--gold-border);">
+              <strong style="color: var(--gold-300);">🖌️ Görsel Tasarım</strong>
+              <p>Geleneksel motifler, renk teorisi ve kompozisyon pratikleri.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <img src="assets/images/clubs/ahsan.png" alt="Ahsan Kulübü Logosu" style="max-width: 260px; margin: 0 auto; filter: drop-shadow(0 10px 30px rgba(212,175,55,0.3));">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       3. AHENKK EDEBİYAT KULÜBÜ
+       ═══════════════════════════════════════════ -->
+  <section id="ahenkk" class="section-padding">
+    <div class="container">
+      <div class="spotlight-grid">
+        <div style="text-align: center;">
+          <img src="assets/images/clubs/ahenkk.png" alt="Ahenkk Kulübü Logosu" style="max-width: 260px; margin: 0 auto; filter: drop-shadow(0 10px 30px rgba(251,146,60,0.3));">
+        </div>
+
+        <div>
+          <span class="section-tag" style="background: rgba(251, 146, 60, 0.15); border-color: rgba(251, 146, 60, 0.3); color: #fed7aa;">Edebiyat, Tefekkür &amp; Münazara</span>
+          <h2 style="font-size: 2.2rem; color: #fff; margin: 0.4rem 0;">
+            AHENKK <span style="color: #fb923c;">KULÜBÜ</span>
+          </h2>
+          <div style="color: #fb923c; font-weight: 700; font-size: 1.05rem; margin-bottom: 1.2rem;">
+            “Kitaplar Fikirlerin Mabedidir”
+          </div>
+
+          <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 1.2rem;">
+            Ahenkk Edebiyat Kulübü; yurdumuzun kütüphanesinde Doğu ve Batı klasiklerinin derinlemesine tahlillerini, münazara halkalarını ve genç kalemler için yazarlık atölyelerini organize eder.
+          </p>
+
+          <div class="hardware-inventory-grid">
+            <div class="hardware-item" style="border-color: rgba(251, 146, 60, 0.3);">
+              <strong style="color: #fed7aa;">📖 Kitap Tahlil Meclisleri</strong>
+              <p>Seçkin fikir ve edebiyat eserlerinin derinlemesine tahlili.</p>
+            </div>
+            <div class="hardware-item" style="border-color: rgba(251, 146, 60, 0.3);">
+              <strong style="color: #fed7aa;">🎙️ Münazara Turnuvaları</strong>
+              <p>Mantık kuralları, antitez geliştirme ve ikna kabiliyeti eğitimi.</p>
+            </div>
+            <div class="hardware-item" style="border-color: rgba(251, 146, 60, 0.3);">
+              <strong style="color: #fed7aa;">✍️ Yazarlık Atölyesi</strong>
+              <p>Deneme, makale, şiir ve araştırma yazıları yazım rehberliği.</p>
+            </div>
+            <div class="hardware-item" style="border-color: rgba(251, 146, 60, 0.3);">
+              <strong style="color: #fed7aa;">📰 Süreli Edebiyat Bülteni</strong>
+              <p>Talebelerimizin özgün yazılarını yayımlayan periyodik bülten.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       4. SOSET DOĞA VE SPOR KULÜBÜ
+       ═══════════════════════════════════════════ -->
+  <section id="soset" class="section-padding section-alt">
+    <div class="container">
+      <div class="spotlight-grid">
+        <div>
+          <span class="section-tag" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3); color: #a7f3d0;">Sosyal Yaşam, Doğa &amp; Spor</span>
+          <h2 style="font-size: 2.2rem; color: #fff; margin: 0.4rem 0;">
+            SOSET <span style="color: #34d399;">KULÜBÜ</span>
+          </h2>
+          <div style="color: #34d399; font-weight: 700; font-size: 1.05rem; margin-bottom: 1.2rem;">
+            “Kültürden Eğlenceye, Hayatın Her Alanında SOSET”
+          </div>
+
+          <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 1.2rem;">
+            Soset Kulübü; yurdumuzun sosyal, kültürel ve sportif faaliyetlerini koordine eder. Doğa yürüyüşleri, gençlik kampları, tarihî medeniyet gezileri ve spor turnuvaları düzenler.
+          </p>
+
+          <div class="hardware-inventory-grid">
+            <div class="hardware-item" style="border-color: rgba(16, 185, 129, 0.3);">
+              <strong style="color: #a7f3d0;">🏕️ Gençlik &amp; Doğa Kampları</strong>
+              <p>Doğa yürüyüşleri, çevre bilinci ve kampçılık becerileri.</p>
+            </div>
+            <div class="hardware-item" style="border-color: rgba(16, 185, 129, 0.3);">
+              <strong style="color: #a7f3d0;">🏛️ Medeniyet Gezileri</strong>
+              <p>Tarihî şehirler, müzeler ve medeniyet mirası ziyaretleri.</p>
+            </div>
+            <div class="hardware-item" style="border-color: rgba(16, 185, 129, 0.3);">
+              <strong style="color: #a7f3d0;">⚽ Spor Turnuvaları</strong>
+              <p>Futsal, voleybol, masa tenisi ve spor müsabakaları.</p>
+            </div>
+            <div class="hardware-item" style="border-color: rgba(16, 185, 129, 0.3);">
+              <strong style="color: #a7f3d0;">🎲 Strateji Oyunları</strong>
+              <p>Satranç, geleneksel mangala ve strateji zeka turnuvaları.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <img src="assets/images/clubs/soset.png" alt="Soset Kulübü Logosu" style="max-width: 260px; margin: 0 auto; filter: drop-shadow(0 10px 30px rgba(16,185,129,0.3));">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-about">
+          <img src="assets/images/logo.svg" alt="Ahmediye Enderun Logosu">
+          <p style="font-size: 0.92rem; color: #94a3b8; line-height: 1.7;">
+            Ahmediye Enderun Talebe Yurdu (Kuruluş 1972 • İzmir Bornova); Açık Öğretim Lisesi (AÖL) talebelerine Osmanlı Enderun mektebi pedagojisini kazandırır.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Hızlı Bağlantılar</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="teskilat.html">Teşkilat &amp; Kültür</a></li>
+            <li><a href="kulupler.html">Kulüplerimiz</a></li>
+            <li><a href="etkinlikler.html">Aylık Pano</a></li>
+            <li><a href="galeri.html">Fotoğraf Galerisi</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kulüplerimiz</h4>
+          <ul class="footer-links">
+            <li><a href="#izbitech" style="color: var(--cyan-accent);">⚡ İzbitech</a></li>
+            <li><a href="#ahsan" style="color: var(--gold-300);">🎨 Ahsan</a></li>
+            <li><a href="#ahenkk" style="color: #fb923c;">📚 Ahenkk</a></li>
+            <li><a href="#soset" style="color: #34d399;">🏕️ Soset</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>İletişim &amp; Lokasyon</h4>
+          <div class="footer-contact-item"><span>📍 Bornova / İzmir</span></div>
+          <div class="footer-contact-item"><span>🗺️ <a href="https://share.google/NlF2BBn75qU1keAN2" target="_blank" style="color: var(--cyan-accent);">Google Haritalar</a></span></div>
+          <div class="footer-contact-item"><span>📞 +90 (232) 555 19 72</span></div>
+          <div class="footer-contact-item"><span>✉️ bilgi@enderun.org.tr</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 1972 - 2026 Ahmediye Enderun Talebe Yurdu • İzmir / Bornova. Tüm hakları saklıdır.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

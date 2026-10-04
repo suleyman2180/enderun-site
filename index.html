@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmediye Enderun Talebe Yurdu | İzmir Bornova (Kuruluş 1972)</title>
+  <meta name="description" content="1972'den beri İzmir Bornova'da Ahmediye Enderun Talebe Yurdu; Açık Öğretim Lisesi (AÖL) talebelerine ilim, ahlak, sanat ve yüksek teknolojiyi kazandıran modern irfan yuvasıdır.">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script>
+    // Akıllı Uzantı Çözücü (.png, .jpeg, .jpg, .webp, .svg otomatik dener)
+    window.addEventListener('error', function(e) {
+      if (e.target && e.target.tagName === 'IMG') {
+        var img = e.target;
+        var src = img.getAttribute('src');
+        if (!src || src.indexOf('data:') === 0 || src.indexOf('http') === 0) return;
+        var exts = ['.png', '.jpeg', '.jpg', '.webp', '.svg'];
+        var tried = (img.dataset.triedExts || '').split(',').filter(Boolean);
+        var lastDot = src.lastIndexOf('.');
+        if (lastDot === -1) return;
+        var currentExt = src.substring(lastDot).toLowerCase();
+        if (tried.indexOf(currentExt) === -1) tried.push(currentExt);
+        var nextExt = null;
+        for (var i = 0; i < exts.length; i++) {
+          if (tried.indexOf(exts[i]) === -1) { nextExt = exts[i]; break; }
+        }
+        if (nextExt) {
+          tried.push(nextExt);
+          img.dataset.triedExts = tried.join(',');
+          img.src = src.substring(0, lastDot) + nextExt;
+        }
+      }
+    }, true);
+  </script>
+</head>
+<body>
+
+  <!-- ═══ 1. SITE HEADER & NAVIGATION ═══ -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-logo" title="Ahmediye Enderun Talebe Yurdu">
+        <img src="assets/images/logo.svg" alt="Ahmediye Enderun Logosu">
+      </a>
+      <div class="nav-pill-container">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active">Giriş</a></li>
+          <li><a href="teskilat.html" class="nav-link">Teşkilat</a></li>
+          <li><a href="kulupler.html" class="nav-link">Kulüplerimiz</a></li>
+          <li><a href="etkinlikler.html" class="nav-link">Aylık Pano</a></li>
+          <li><a href="galeri.html" class="nav-link">Galeri</a></li>
+          <li><a href="veli-gorusleri.html" class="nav-link">Veli Görüşleri</a></li>
+          <li><a href="sss.html" class="nav-link">S.S.S.</a></li>
+        </ul>
+      </div>
+      <div class="nav-actions">
+        <a href="basvuru.html" class="btn btn-primary btn-sm">Ön Kayıt Başvuru</a>
+        <a href="kiosk.html" class="btn btn-kiosk btn-sm" target="_blank">📺 Pano</a>
+        <button class="mobile-toggle" aria-label="Menüyü Aç/Kapat">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ 2. HERO SECTION ═══ -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      
+      <!-- Left: Value Proposition -->
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>1972'DEN BUGÜNE BORNOVA'DA İRFAN MEKTEBİ</span>
+        </div>
+
+        <h1 class="hero-title">
+          Köklü İrfan, <br>
+          <span class="gold-gradient">Yüksek Ahlâk &amp;</span> <br>
+          <span class="cyan-gradient">Geleceğin Teknolojisi</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Ahmediye Enderun Talebe Yurdu; Açık Öğretim Lisesi (AÖL 1-6. Dönem) talebelerimize Osmanlı Enderun pedagojisiyle ilim meclisleri, 4 ihtisas kulübü atölyeleri ve modern yurt imkanları sunar.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="basvuru.html" class="btn btn-primary btn-glow">Hemen Ön Kayıt Yap →</a>
+          <a href="kulupler.html" class="btn btn-secondary">Kulüpleri Keşfet</a>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="hero-trust-row">
+          <div class="trust-item">
+            <span class="trust-icon">🏛️</span>
+            <div><strong>1972'den Beri</strong><span>Kadim Vakıf Tecrübesi</span></div>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">🎓</span>
+            <div><strong>9, 10 ve 11. Sınıflar</strong><span>AÖL Talebeleri Kabulü</span></div>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">🕌</span>
+            <div><strong>İzmir / Bornova</strong><span>Merkezi Konum &amp; Bahçe</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Enderun 4 Clubs Spotlight -->
+      <div class="hero-visual">
+        <div class="glass-card hero-glass-card">
+          <div class="glass-card-inner">
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <span class="section-tag">4 İHTİSAS KULÜBÜ</span>
+              <img src="assets/images/logo.svg" alt="Enderun Amblemi" style="height: 38px;">
+            </div>
+
+            <!-- 4 Equal Mini Cards -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+              
+              <div style="background: rgba(0, 242, 254, 0.08); border: 1px solid rgba(0, 242, 254, 0.3); border-radius: 12px; padding: 1rem; text-align: center;">
+                <img src="assets/images/clubs/izbitech.png" alt="İzbitech" style="width: 38px; height: 38px; margin: 0 auto 0.4rem auto;">
+                <strong style="color: var(--cyan-accent); font-size: 0.88rem; display: block;">İZBİTECH</strong>
+                <span style="font-size: 0.75rem; color: #cbd5e1;">Yazılım • 3D • Drone</span>
+              </div>
+
+              <div style="background: rgba(212, 175, 55, 0.08); border: 1px solid var(--gold-border); border-radius: 12px; padding: 1rem; text-align: center;">
+                <img src="assets/images/clubs/ahsan.png" alt="Ahsan" style="width: 38px; height: 38px; margin: 0 auto 0.4rem auto;">
+                <strong style="color: var(--gold-300); font-size: 0.88rem; display: block;">AHSAN</strong>
+                <span style="font-size: 0.75rem; color: #cbd5e1;">Hat • Ebru • Ney</span>
+              </div>
+
+              <div style="background: rgba(251, 146, 60, 0.08); border: 1px solid rgba(251, 146, 60, 0.3); border-radius: 12px; padding: 1rem; text-align: center;">
+                <img src="assets/images/clubs/ahenkk.png" alt="Ahenkk" style="width: 38px; height: 38px; margin: 0 auto 0.4rem auto;">
+                <strong style="color: #fb923c; font-size: 0.88rem; display: block;">AHENKK</strong>
+                <span style="font-size: 0.75rem; color: #cbd5e1;">Edebiyat • Münazara</span>
+              </div>
+
+              <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 1rem; text-align: center;">
+                <img src="assets/images/clubs/soset.png" alt="Soset" style="width: 38px; height: 38px; margin: 0 auto 0.4rem auto;">
+                <strong style="color: #34d399; font-size: 0.88rem; display: block;">SOSET</strong>
+                <span style="font-size: 0.75rem; color: #cbd5e1;">Doğa • Kamplar • Spor</span>
+              </div>
+
+
+            <p style="font-size: 0.88rem; color: #cbd5e1; margin-bottom: 1.2rem; line-height: 1.6;">
+              Talebelerimiz ilgi ve istidatlarına göre 4 kulübümüzde aktif rol alır; atölyeler, aylık etkinlikler ve geleneksel ikram faaliyetleri organize eder.
+            </p>
+
+            <a href="kulupler.html" class="btn btn-primary" style="width: 100%;">
+              Tüm Kulüpleri İncele →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 3. DÖRT TEMEL ESAS ═══ -->
+  <section class="section-padding section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Fıtratı İnkişaf Ettirmek</span>
+        <h2 class="section-title">Enderun’un <span class="gold-gradient">Dört Temel Esası</span></h2>
+        <div class="section-title-line"></div>
+        <p class="section-desc" style="margin-top: 1.5rem;">
+          Açık Öğretim Lisesi (AÖL) talebelerimizin zihni, ruhi ve bedeni inkişafını sağlayan köklü eğitim yaklaşımımız.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.8rem;">
+        
+        <div class="glass-card">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">📖</div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 0.6rem; color: #fff;">Köklü İlim &amp; AÖL Takviyesi</h3>
+          <p style="font-size: 0.95rem;">
+            Açık lise derslerinde akademik başarı, düzenli soru etütleri ve medeniyetimizin kadim metinleriyle tefekkür derinliği.
+          </p>
+        </div>
+
+        <div class="glass-card">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎨</div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 0.6rem; color: var(--gold-300);">Estetik &amp; Sanat</h3>
+          <p style="font-size: 0.95rem;">
+            Ahsan kulübü ile hüsn-i hat, ebru ve tiyatro atölyeleriyle gençlerin estetik idrakini terbiye etme.
+          </p>
+        </div>
+
+        <div class="glass-card">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🚀</div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 0.6rem; color: var(--cyan-accent);">Teknoloji &amp; İnovasyon</h3>
+          <p style="font-size: 0.95rem;">
+            İzbitech kulübü ile 3D modelleme, robotik kodlama, VR simülasyon ve yazılım geliştirme.
+          </p>
+        </div>
+
+        <div class="glass-card">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🤝</div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 0.6rem; color: #34d399;">Ahlak &amp; Kardeşlik</h3>
+          <p style="font-size: 0.95rem;">
+            Soset ve Ahenkk ile doğa kampları, kitap tahlilleri ve samimi hasbihal sofralarıyla örülen sarsılmaz kardeşlik bağı.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 4. DÖRT İHTİSAS KULÜBÜMÜZ (4 EŞİT KART GRID) ═══ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Öğrenci Kulüpleri</span>
+        <h2 class="section-title">Ahmediye Enderun <span class="gold-gradient">4 İhtisas Kulübü</span></h2>
+        <div class="section-title-line"></div>
+        <p class="section-desc" style="margin-top: 1.5rem;">
+          Her talebenin kendi ilgi ve yeteneğine göre üretip sorumluluk aldığı 4 ihtisas kulübümüz.
+        </p>
+      </div>
+
+      <div class="clubs-grid-4">
+        
+        <!-- 1. İZBİTECH -->
+        <div class="club-card" style="--club-accent: var(--izbitech-color); --club-glow: var(--izbitech-glow);">
+          <div class="club-header">
+            <div class="club-icon-wrap" style="border-color: rgba(0, 242, 254, 0.4);">
+              <img src="assets/images/clubs/izbitech.png" alt="İzbitech Kulübü">
+            </div>
+            <div class="club-name-group">
+              <span class="section-tag section-tag-cyan" style="font-size: 0.72rem; padding: 2px 8px; margin-bottom: 4px;">YAZILIM &amp; DONANIM</span>
+              <h3 style="color: #fff;">İZBİTECH</h3>
+              <span class="club-motto" style="color: var(--cyan-accent);">“Geleceği Seyreden Değil, Geliştiren Nesil”</span>
+            </div>
+          </div>
+          <p style="font-size: 0.92rem;">
+            3D Yazıcı, VR Sanal Gerçeklik, robotik kodlama ve PC laboratuvarı imkanlarıyla uygulamalı teknoloji ve yazılım geliştirme merkezi.
+          </p>
+          <ul class="club-features-list">
+            <li><span class="dot">✦</span> 3D Modelleme &amp; Prototipleme</li>
+            <li><span class="dot">✦</span> Robotik Kodlama &amp; Yazılım</li>
+            <li><span class="dot">✦</span> VR Simülasyon &amp; Drone Pilotajı</li>
+          </ul>
+          <a href="kulupler.html#izbitech" class="btn btn-secondary btn-sm" style="margin-top: auto;">Kulübü İncele →</a>
+        </div>
+
+        <!-- 2. AHSAN -->
+        <div class="club-card" style="--club-accent: var(--ahsan-color); --club-glow: var(--ahsan-glow);">
+          <div class="club-header">
+            <div class="club-icon-wrap" style="border-color: var(--gold-border);">
+              <img src="assets/images/clubs/ahsan.png" alt="Ahsan Sanat Kulübü">
+            </div>
+            <div class="club-name-group">
+              <span class="section-tag" style="font-size: 0.72rem; padding: 2px 8px; margin-bottom: 4px;">GELENEKSEL SANATLAR</span>
+              <h3 style="color: #fff;">AHSAN SANAT</h3>
+              <span class="club-motto">“Kötü resim yoktur, Bakamayan göz vardır.”</span>
+            </div>
+          </div>
+          <p style="font-size: 0.92rem;">
+            Osmanlı tezhip, hüsn-i hat ve ebru sanatlarının inceliklerini sahne sanatları ve estetik tasarım çalışmalarıyla buluşturur.
+          </p>
+          <ul class="club-features-list">
+            <li><span class="dot">✦</span> Hüsn-i Hat &amp; Kaligrafi Atölyeleri</li>
+            <li><span class="dot">✦</span> Ebru Sanatı &amp; Tezhip Motifleri</li>
+            <li><span class="dot">✦</span> Tiyatro &amp; Sahne Sanatları</li>
+          </ul>
+          <a href="kulupler.html#ahsan" class="btn btn-secondary btn-sm" style="margin-top: auto;">Kulübü İncele →</a>
+        </div>
+
+        <!-- 3. AHENKK -->
+        <div class="club-card" style="--club-accent: var(--ahenkk-color); --club-glow: var(--ahenkk-glow);">
+          <div class="club-header">
+            <div class="club-icon-wrap" style="border-color: rgba(251, 146, 60, 0.4);">
+              <img src="assets/images/clubs/ahenkk.png" alt="Ahenkk Kulübü">
+            </div>
+            <div class="club-name-group">
+              <span class="section-tag" style="background: rgba(251, 146, 60, 0.15); border-color: rgba(251, 146, 60, 0.3); color: #fed7aa; font-size: 0.72rem; padding: 2px 8px; margin-bottom: 4px;">EDEBİYAT &amp; FİKİR</span>
+              <h3 style="color: #fff;">AHENKK</h3>
+              <span class="club-motto" style="color: #fb923c;">“Kitaplar Fikirlerin Mabedidir”</span>
+            </div>
+          </div>
+          <p style="font-size: 0.92rem;">
+            Kelamın ve fikrin gücünü keşfeden Ahenkk; kitap tahlilleri, münazara ligleri ve süreli dergi yayınlarıyla zihinleri aydınlatır.
+          </p>
+          <ul class="club-features-list">
+            <li><span class="dot">✦</span> Haftalık Kitap Tahlil Meclisleri</li>
+            <li><span class="dot">✦</span> Liselerarası Münazara Turnuvaları</li>
+            <li><span class="dot">✦</span> ‘Enderun Âvâzı’ Bülten Yayını</li>
+          </ul>
+          <a href="kulupler.html#ahenkk" class="btn btn-secondary btn-sm" style="margin-top: auto;">Kulübü İncele →</a>
+        </div>
+
+        <!-- 4. SOSET -->
+        <div class="club-card" style="--club-accent: var(--soset-color); --club-glow: var(--soset-glow);">
+          <div class="club-header">
+            <div class="club-icon-wrap" style="border-color: rgba(16, 185, 129, 0.4);">
+              <img src="assets/images/clubs/soset.png" alt="Soset Kulübü">
+            </div>
+            <div class="club-name-group">
+              <span class="section-tag" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3); color: #a7f3d0; font-size: 0.72rem; padding: 2px 8px; margin-bottom: 4px;">DOĞA &amp; SPOR</span>
+              <h3 style="color: #fff;">SOSET</h3>
+              <span class="club-motto" style="color: #34d399;">“Hayatın Her Alanında SOSET”</span>
+            </div>
+          </div>
+          <p style="font-size: 0.92rem;">
+            Doğayla baş başa, kardeşlik şuuruyla hareket eden Soset; doğa kampları, şehir gezileri, spor ligleri ve zeka oyunları düzenler.
+          </p>
+          <ul class="club-features-list">
+            <li><span class="dot">✦</span> Doğa &amp; Gençlik Kampları</li>
+            <li><span class="dot">✦</span> Tarih ve Medeniyet Şehir Gezileri</li>
+            <li><span class="dot">✦</span> Futsal, Masa Tenisi &amp; Mangala Ligleri</li>
+          </ul>
+          <a href="kulupler.html#soset" class="btn btn-secondary btn-sm" style="margin-top: auto;">Kulübü İncele →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 5. AYLIK ETKİNLİK DÜZENİ ═══ -->
+  <section class="section-padding section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Aylık Faaliyet Nizamı</span>
+        <h2 class="section-title">Dönem Etkinlik ve <span class="gold-gradient">İkram Takvimi</span></h2>
+        <div class="section-title-line"></div>
+        <p class="section-desc" style="margin-top: 1.5rem;">
+          Her ay icra edilen 1 Büyük Etkinlik, 1 Geleneksel İkram ve 2-3 Küçük Etkinliğin düzenli haftalık dağılımı.
+        </p>
+      </div>
+
+      <div class="events-assignment-grid">
+        
+        <!-- Task 1 -->
+        <div class="event-card">
+          <img src="assets/images/posters/poster-buyuk.svg" alt="Büyük Etkinlik Afişi" class="event-card-img">
+          <div class="event-card-body">
+            <span class="event-badge badge-grand">🌟 1 Büyük Etkinlik</span>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #fff;">Dönem Ana Projesi</h3>
+            <p style="font-size: 0.92rem; color: #cbd5e1; margin-bottom: 1rem;">
+              Her kulübün kendi alanında düzenlediği sergi, sempozyum, yarışma veya dönem projesi.
+            </p>
+            <div style="margin-top: auto; font-size: 0.85rem; color: var(--gold-300); font-weight: 600;">
+              📅 Cuma Akşamı (20:00)
+            </div>
+          </div>
+        </div>
+
+        <!-- Task 2 -->
+        <div class="event-card">
+          <img src="assets/images/posters/poster-ikram.svg" alt="İkramlı Buluşma Afişi" class="event-card-img">
+          <div class="event-card-body">
+            <span class="event-badge badge-treat">☕ 1 Geleneksel İkram</span>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #fff;">Sıcak Helva &amp; Çay İkramı</h3>
+            <p style="font-size: 0.92rem; color: #cbd5e1; margin-bottom: 1rem;">
+              Büyük etkinlik akabinde tüm talebelere ikram edilen geleneksel sıcak helva ve taze çay ikramı.
+            </p>
+            <div style="margin-top: auto; font-size: 0.85rem; color: #6ee7b7; font-weight: 600;">
+              📅 Cuma Akşamı (Büyük Etkinlik Sonrası)
+            </div>
+          </div>
+        </div>
+
+        <!-- Task 3 -->
+        <div class="event-card">
+          <img src="assets/images/posters/poster-kucuk.svg" alt="Küçük Etkinlik Afişi" class="event-card-img">
+          <div class="event-card-body">
+            <span class="event-badge badge-small">🎯 2 ila 3 Küçük Etkinlik</span>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #fff;">Haftalık Atölye &amp; Meclisler</h3>
+            <p style="font-size: 0.92rem; color: #cbd5e1; margin-bottom: 1rem;">
+              Kitap tahlili, 3D modelleme çizimi, hat meşki ve mangala/satranç gibi haftalık odaklı küçük etkinlikler.
+            </p>
+            <div style="margin-top: auto; font-size: 0.85rem; color: #38bdf8; font-weight: 600;">
+              📅 Pazartesi veya Salı Akşamları (20:00)
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="etkinlikler.html" class="btn btn-gold btn-lg">
+          📅 Güncel Ay Etkinlik Panosunu Gör →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 6. VELİLERİMİZİN GÖRÜŞLERİ (SANSÜRLÜ & MESLEKSİZ) ═══ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Güven &amp; Samimiyet</span>
+        <h2 class="section-title">Velilerimizin <span class="gold-gradient">Gönülden İtirafları</span></h2>
+        <div class="section-title-line"></div>
+        <p class="section-desc" style="margin-top: 1.5rem;">
+          Evlatlarını Ahmediye Enderun ailesine emanet eden velilerimizin samimi tecrübeleri.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+        
+        <div class="glass-card">
+          <div style="color: var(--gold-400); font-size: 1.2rem; margin-bottom: 1rem;">★★★★★</div>
+          <p style="font-style: italic; color: #e2e8f0; margin-bottom: 1.5rem; line-height: 1.7;">
+            “Oğlumuz Açık Öğretim Lisesi'ne (AÖL) geçtiğinde en büyük endişemiz disiplin ve ahlaki gelişimiydi. Ahmediye Enderun, gerçek bir terbiye ve fikir mektebi oldu. İzbitech kulübündeki 3D yazıcı ve yazılım projeleri ufkunu inanılmaz açtı.”
+          </p>
+          <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem;">
+            <strong style="color: #fff; display: block;">M. S. Y.</strong>
+            <span style="color: var(--gold-300); font-size: 0.85rem;">Talebe Velisi (İzmir)</span>
+          </div>
+        </div>
+
+        <div class="glass-card">
+          <div style="color: var(--gold-400); font-size: 1.2rem; margin-bottom: 1rem;">★★★★★</div>
+          <p style="font-style: italic; color: #e2e8f0; margin-bottom: 1.5rem; line-height: 1.7;">
+            “Yurttaki abi-kardeş hukuku ve mezun abilerin ilgisi bize huzur veriyor. Ahsan kulübündeki ney meşkleri oğlumun karakterine dinginlik kattı. Ders çalışma saatlerinde telefonların toplanması odaklanmasını çok artırdı.”
+          </p>
+          <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem;">
+            <strong style="color: #fff; display: block;">A. K.</strong>
+            <span style="color: var(--gold-300); font-size: 0.85rem;">Talebe Velisi (Bornova)</span>
+          </div>
+        </div>
+
+        <div class="glass-card">
+          <div style="color: var(--gold-400); font-size: 1.2rem; margin-bottom: 1rem;">★★★★★</div>
+          <p style="font-style: italic; color: #e2e8f0; margin-bottom: 1.5rem; line-height: 1.7;">
+            “Enderun felsefesinin günlük hayatta nasıl can bulduğunu bizzat gördük. Ahenkk kulübü münazaraları oğlumun kendini ifade etme özgüvenini iki katına çıkardı. Emeği geçenlere teşekkür ederiz.”
+          </p>
+          <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem;">
+            <strong style="color: #fff; display: block;">Ö. F. D.</strong>
+            <span style="color: var(--gold-300); font-size: 0.85rem;">Talebe Velisi (Manisa)</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="veli-gorusleri.html" class="btn btn-secondary">
+          Tüm Veli Görüşlerini Oku →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 7. FOOTER (İZMİR BORNOVA & MAPS) ═══ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-col footer-about">
+          <img src="assets/images/logo.svg" alt="Ahmediye Enderun Logosu">
+          <p style="font-size: 0.92rem; color: #94a3b8; line-height: 1.7; margin-bottom: 1.2rem;">
+            Ahmediye Enderun Talebe Yurdu (Kuruluş 1972 • İzmir Bornova); Açık Öğretim Lisesi (AÖL) talebelerine Osmanlı Enderun mektebi pedagojisini, ahlakı, sanatı ve yüksek teknolojiyi kazandıran irfan yuvasıdır.
+          </p>
+          <span class="badge-1972">EST. 1972 • İZMİR BORNOVA</span>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hızlı Bağlantılar</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="teskilat.html">Teşkilat &amp; Kültür</a></li>
+            <li><a href="kulupler.html">Kulüplerimiz</a></li>
+            <li><a href="etkinlikler.html">Aylık Pano</a></li>
+            <li><a href="galeri.html">Fotoğraf Galerisi</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>4 İhtisas Kulübü</h4>
+          <ul class="footer-links">
+            <li><a href="kulupler.html#izbitech" style="color: var(--cyan-accent);">⚡ İzbitech (Teknoloji)</a></li>
+            <li><a href="kulupler.html#ahsan" style="color: var(--gold-300);">🎨 Ahsan (Geleneksel Sanat)</a></li>
+            <li><a href="kulupler.html#ahenkk" style="color: #fb923c;">📚 Ahenkk (Edebiyat)</a></li>
+            <li><a href="kulupler.html#soset" style="color: #34d399;">🏕️ Soset (Doğa &amp; Spor)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>İletişim &amp; Lokasyon</h4>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📍</span>
+            <span>Bornova / İzmir</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">🗺️</span>
+            <a href="https://share.google/NlF2BBn75qU1keAN2" target="_blank" style="color: var(--cyan-accent); text-decoration: underline;">Google Haritalarda Aç</a>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📞</span>
+            <span>+90 (232) 555 19 72</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">✉️</span>
+            <span>bilgi@enderun.org.tr</span>
+          </div>
+          <div style="margin-top: 1rem;">
+            <a href="kiosk.html" class="btn btn-kiosk btn-sm" target="_blank">📺 TV Kiosk / Dijital Pano</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 1972 - 2026 Ahmediye Enderun Talebe Yurdu • İzmir / Bornova. Tüm hakları saklıdır.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="sss.html">S.S.S.</a>
+          <a href="basvuru.html">Kayıt Şartları</a>
+          <a href="kiosk.html">Kiosk Modu</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

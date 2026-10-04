@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dijital Pano (TV Kiosk Modu) | Ahmediye Enderun Talebe Yurdu (İzmir Bornova)</title>
+  <meta name="description" content="Ahmediye Enderun Talebe Yurdu lobi ve koridor TV ekranları için canlı dijital pano ve faaliyet akışı.">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/kiosk.css">
+  <script>
+    // Akıllı Uzantı Çözücü (.png, .jpeg, .jpg, .webp, .svg otomatik dener)
+    window.addEventListener('error', function(e) {
+      if (e.target && e.target.tagName === 'IMG') {
+        var img = e.target;
+        var src = img.getAttribute('src');
+        if (!src || src.indexOf('data:') === 0 || src.indexOf('http') === 0) return;
+        var exts = ['.png', '.jpeg', '.jpg', '.webp', '.svg'];
+        var tried = (img.dataset.triedExts || '').split(',').filter(Boolean);
+        var lastDot = src.lastIndexOf('.');
+        if (lastDot === -1) return;
+        var currentExt = src.substring(lastDot).toLowerCase();
+        if (tried.indexOf(currentExt) === -1) tried.push(currentExt);
+        var nextExt = null;
+        for (var i = 0; i < exts.length; i++) {
+          if (tried.indexOf(exts[i]) === -1) { nextExt = exts[i]; break; }
+        }
+        if (nextExt) {
+          tried.push(nextExt);
+          img.dataset.triedExts = tried.join(',');
+          img.src = src.substring(0, lastDot) + nextExt;
+        }
+      }
+    }, true);
+  </script>
+  <style>
+    .k-slide-item {
+      display: none;
+      animation: fadeInDown 0.5s ease forwards;
+      flex: 1;
+      min-height: 0;
+    }
+    .k-slide-item.active {
+      display: flex;
+      flex-direction: column;
+    }
+    .k-slide-item .k-events-box {
+      flex: 1;
+      justify-content: center;
+    }
+    .k-ticker-wrap {
+      background: #020617;
+      border-top: 1.5px solid rgba(212, 175, 55, 0.4);
+      padding: 0.6rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .k-ticker-label {
+      background: var(--k-gold);
+      color: #070d1f;
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 3px 10px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      letter-spacing: 1px;
+    }
+    .k-ticker-text {
+      color: #cbd5e1;
+      font-size: 0.92rem;
+      display: inline-block;
+      animation: tickerSlide 25s linear infinite;
+    }
+    @keyframes tickerSlide {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .k-progress-line {
+      height: 3px;
+      background: rgba(255,255,255,0.1);
+      width: 100%;
+      position: relative;
+    }
+    .k-progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--k-cyan), var(--k-gold));
+      width: 0%;
+    }
+  </style>
+</head>
+<body class="kiosk-body">
+
+  <!-- Floating Screen Controls -->
+  <div class="k-controls">
+    <button id="kPauseBtn" class="k-ctrl-btn">⏸ Duraklat</button>
+    <button onclick="window.kioskPrevSlide()" class="k-ctrl-btn">◀ Önceki</button>
+    <button onclick="window.kioskNextSlide()" class="k-ctrl-btn">Sonraki ▶</button>
+    <button id="kFsBtn" class="k-ctrl-btn">⛶ Tam Ekran</button>
+    <a href="index.html" class="k-ctrl-btn" style="text-decoration: none;">🏠 Web Sitesine Dön</a>
+  </div>
+
+  <div class="kiosk-frame">
+    
+    <!-- Kiosk Header -->
+    <header class="k-header">
+      <div class="k-logo-wrap">
+        <img src="assets/images/logo.svg" alt="Ahmediye Enderun Logosu" class="k-logo">
+      </div>
+
+      <!-- Live Bornova Weather Widget (Open-Meteo Ücretsiz API) -->
+      <div class="k-weather-wrap" id="kWeatherWrap" title="Bornova / İzmir Canlı Hava Durumu">
+        <div class="k-weather-icon" id="kWeatherIcon">🌤️</div>
+        <div class="k-weather-info">
+          <div class="k-weather-temp"><span id="kWeatherTemp">--</span>°C</div>
+          <div class="k-weather-details">
+            <span class="k-weather-city">Bornova / İzmir</span>
+            <span id="kWeatherDesc" class="k-weather-desc">Hava Durumu Alınıyor...</span>
+          </div>
+        </div>
+        <div class="k-weather-sub">
+          <div><span style="color: #94a3b8;">Hissedilen:</span> <strong id="kWeatherApparent" style="color: #38bdf8;">--</strong>°C</div>
+          <div><span style="color: #94a3b8;">Nem:</span> <strong id="kWeatherHumidity" style="color: var(--k-gold);">%--</strong> • <span style="color: #94a3b8;">Rüzgar:</span> <strong id="kWeatherWind" style="color: #6ee7b7;">-- km/s</strong></div>
+        </div>
+      </div>
+
+      <!-- Live Clock & Dual Dates (İzmir / Bornova) -->
+      <div class="k-clock-wrap">
+        <div id="kClock" class="k-clock">--:--:--</div>
+        <div class="k-dates">
+          <span id="kDateGregorian">Yükleniyor...</span>
+          <span>•</span>
+          <span id="kDateHijri">16 Safer 1448 • İzmir / Bornova</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Kiosk Main Grid Body -->
+    <main class="k-body">
+      
+      <!-- Left Column: Rotating Slides (4 İhtisas Kulübü & İkram) -->
+      <div class="k-col-left">
+        
+        <div class="k-progress-line">
+          <div id="kSlideProgress" class="k-progress-bar"></div>
+        </div>
+
+        <!-- Slide 1: İzbitech -->
+        <div class="k-slide-item active">
+          <div class="k-events-box" style="border-color: var(--k-cyan);">
+            <div class="k-events-head">
+              <span style="font-size: 1.4rem;">⚡</span>
+              <span class="k-events-title" style="color: var(--k-cyan);">İZBİTECH TEKNOLOJİ KULÜBÜ</span>
+              <span class="k-events-month" style="color: var(--k-cyan);">Eylül Faaliyeti</span>
+            </div>
+            <div style="display: flex; gap: 1.5rem; align-items: center;">
+              <img src="assets/images/izbitech_wallpaper.jpg" alt="İzbitech Lab" style="width: 240px; border-radius: 12px; border: 1px solid var(--k-cyan); aspect-ratio: 16/9; object-fit: cover;">
+              <div>
+                <span style="background: rgba(0, 242, 254, 0.15); color: var(--k-cyan); border: 1px solid rgba(0, 242, 254, 0.3); padding: 3px 10px; border-radius: 20px; font-size: 0.78rem; font-weight: 800;">
+                  TEKNOLOJİ &amp; İNOVASYON
+                </span>
+                <h2 style="font-size: 1.5rem; color: #fff; margin: 0.4rem 0;">3D Modelleme &amp; Robotik Atölyesi</h2>
+                <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.6;">
+                  Talebelerimizin 3 boyutlu prototipleme, mekanik tasarım, algoritma ve yazılım geliştirme çalışmaları.
+                </p>
+                <div style="margin-top: 1rem; font-size: 0.85rem; color: var(--k-cyan);">📍 İzbitech Teknoloji Laboratuvarı</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Ahsan - Geleneksel İkram -->
+        <div class="k-slide-item">
+          <div class="k-events-box" style="border-color: var(--k-gold);">
+            <div class="k-events-head">
+              <span style="font-size: 1.4rem;">☕</span>
+              <span class="k-events-title" style="color: var(--k-gold);">GELENEKSEL İKRAM GECESİ</span>
+              <span class="k-events-month" style="color: var(--k-gold);">Cuma Akşamı</span>
+            </div>
+            <div style="display: flex; gap: 1.5rem; align-items: center;">
+              <img src="assets/images/posters/poster-ikram.svg" alt="İkram Afişi" style="width: 220px; border-radius: 12px; border: 1px solid var(--k-gold);">
+              <div>
+                <span style="background: rgba(212, 175, 55, 0.15); color: var(--k-gold); border: 1px solid var(--k-gold-border); padding: 3px 10px; border-radius: 20px; font-size: 0.78rem; font-weight: 800;">
+                  GELENEKSEL İKRAM
+                </span>
+                <h2 style="font-size: 1.5rem; color: #fff; margin: 0.4rem 0;">Sıcak Helva &amp; Çay İkramı</h2>
+                <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.6;">
+                  Büyük etkinlik akabinde tüm talebelerimize taze demlenmiş çay eşliğinde geleneksel sıcak helva ve tatlı ikramı yapılır.
+                </p>
+                <div style="margin-top: 1rem; font-size: 0.85rem; color: var(--k-gold);">📍 Enderun Yemekhanesi &amp; Bahçe</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Ahenkk Edebiyat -->
+        <div class="k-slide-item">
+          <div class="k-events-box" style="border-color: #fb923c;">
+            <div class="k-events-head">
+              <span style="font-size: 1.4rem;">📚</span>
+              <span class="k-events-title" style="color: #fb923c;">AHENKK EDEBİYAT KULÜBÜ</span>
+              <span class="k-events-month" style="color: #fb923c;">Eylül Faaliyeti</span>
+            </div>
+            <div style="display: flex; gap: 1.5rem; align-items: center;">
+              <img src="assets/images/clubs/ahenkk.png" alt="Ahenkk" style="width: 180px; padding: 10px;">
+              <div>
+                <span style="background: rgba(251, 146, 60, 0.15); color: #fb923c; border: 1px solid rgba(251, 146, 60, 0.3); padding: 3px 10px; border-radius: 20px; font-size: 0.78rem; font-weight: 800;">
+                  EDEBİYAT &amp; FİKİR
+                </span>
+                <h2 style="font-size: 1.5rem; color: #fff; margin: 0.4rem 0;">Kitap Tahlil Meclisi &amp; Münazara</h2>
+                <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.6;">
+                  Doğu ve Batı klasiklerinin derinlemesine tahlilleri, deneme yazarlığı ve münazara ligi hazırlıkları.
+                </p>
+                <div style="margin-top: 1rem; font-size: 0.85rem; color: #fb923c;">📍 Enderun Kütüphanesi</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4: Soset Doğa -->
+        <div class="k-slide-item">
+          <div class="k-events-box" style="border-color: #10b981;">
+            <div class="k-events-head">
+              <span style="font-size: 1.4rem;">🏕️</span>
+              <span class="k-events-title" style="color: #34d399;">SOSET DOĞA &amp; SPOR KULÜBÜ</span>
+              <span class="k-events-month" style="color: #34d399;">Eylül Faaliyeti</span>
+            </div>
+            <div style="display: flex; gap: 1.5rem; align-items: center;">
+              <img src="assets/images/clubs/soset.png" alt="Soset" style="width: 180px; padding: 10px;">
+              <div>
+                <span style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 3px 10px; border-radius: 20px; font-size: 0.78rem; font-weight: 800;">
+                  DOĞA &amp; SPOR
+                </span>
+                <h2 style="font-size: 1.5rem; color: #fff; margin: 0.4rem 0;">Homeros Vadisi Doğa Yürüyüşü</h2>
+                <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.6;">
+                  Hafta sonu doğa yürüyüşü, çevre bilinci ve geleneksel masa tenisi/futsal spor müsabakaları.
+                </p>
+                <div style="margin-top: 1rem; font-size: 0.85rem; color: #34d399;">📍 Homeros Vadisi / Bornova</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ÂYET-İ KERÎME & HADİS-İ ŞERİF BÖLÜMÜ (ETKİNLİKLERİN ALTINDA) -->
+        <div class="k-events-box k-wisdom-box">
+          <div class="k-events-head">
+            <span style="font-size: 1.2rem;">📖</span>
+            <span class="k-events-title" style="color: var(--k-cyan);">GÜNÜN ÂYET-İ KERÎMESİ &amp; HADİS-İ ŞERİFİ</span>
+          </div>
+          
+          <div class="k-wisdom-container">
+            <!-- Ayet-i Kerime -->
+            <div class="k-wisdom-card k-card-ayah">
+              <div class="k-wisdom-header">
+                <span class="k-wisdom-badge ayah">ÂYET-İ KERÎME</span>
+                <span class="k-wisdom-ref" id="kAyahRef">— Zümer Sûresi, 9. Âyet</span>
+              </div>
+              <p class="k-wisdom-text" id="kAyahText">
+                “De ki: Hiç bilenlerle bilmeyenler bir olur mu? Ancak akıl sahipleri öğüt alırlar.”
+              </p>
+            </div>
+
+            <!-- Hadis-i Serif -->
+            <div class="k-wisdom-card k-card-hadith">
+              <div class="k-wisdom-header">
+                <span class="k-wisdom-badge hadith">HADİS-İ ŞERİF</span>
+                <span class="k-wisdom-ref" id="kHadithRef">— Hadis-i Şerif (İbn Mâce)</span>
+              </div>
+              <p class="k-wisdom-text" id="kHadithText">
+                “İlim talep etmek her Müslümana farzdır. İlim tahsil eden kimseye denizdeki balıklara varıncaya kadar her şey istiğfar eder.”
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Prayer Times & Daily History (Fazilet) -->
+      <div class="k-col-right">
+        
+        <!-- Prayer Countdown (İzmir / Bornova - Fazilet Takvimi) -->
+        <div class="k-countdown">
+          <div class="k-countdown-left">
+            <span class="k-mosque-icon">🕌</span>
+            <div>
+              <div class="k-city-label" id="kPrayerSource">İzmir / Bornova (Fazilet Takvimi)</div>
+              <div id="kNextPrayerName" class="k-next-label">Vaktine Kalan:</div>
+            </div>
+          </div>
+          <div class="k-countdown-right">
+            <div id="kCountdownDigits" class="k-digits">00:00:00</div>
+            <div class="k-kaldi">Kalan Süre</div>
+          </div>
+        </div>
+
+        <!-- Prayer Grid (7 Vakit: İmsak, Sabah, Güneş, Öğle, İkindi, Akşam, Yatsı) -->
+        <div class="k-prayer-grid">
+          <div class="k-prayer-card" id="pCard-imsak">
+            <div class="k-prayer-name">İmsak</div>
+            <div class="k-prayer-time">04:32</div>
+          </div>
+          <div class="k-prayer-card" id="pCard-sabah">
+            <div class="k-prayer-name">Sabah</div>
+            <div class="k-prayer-time">04:52</div>
+          </div>
+          <div class="k-prayer-card" id="pCard-gunes">
+            <div class="k-prayer-name">Güneş</div>
+            <div class="k-prayer-time">06:19</div>
+          </div>
+          <div class="k-prayer-card active" id="pCard-ogle">
+            <div class="k-prayer-name">Öğle</div>
+            <div class="k-prayer-time">13:15</div>
+          </div>
+          <div class="k-prayer-card" id="pCard-ikindi">
+            <div class="k-prayer-name">İkindi</div>
+            <div class="k-prayer-time">16:58</div>
+          </div>
+          <div class="k-prayer-card" id="pCard-aksam">
+            <div class="k-prayer-name">Akşam</div>
+            <div class="k-prayer-time">19:50</div>
+          </div>
+          <div class="k-prayer-card" id="pCard-yatsi">
+            <div class="k-prayer-name">Yatsı</div>
+            <div class="k-prayer-time">21:24</div>
+          </div>
+        </div>
+
+        <!-- FAZİLET TAKVİMİ — TÂRİHTE BUGÜN & GÜNÜN ÖNEMLİ OLAYLARI -->
+        <div class="k-events-box k-history-box" id="kHistoryBox">
+          <div class="k-events-head">
+            <span style="font-size: 1.3rem;">📜</span>
+            <div style="display: flex; flex-direction: column;">
+              <span class="k-events-title" style="color: var(--k-gold); letter-spacing: 0.5px;">TÂRİHTE BUGÜN &amp; MÜHİM HADİSELER</span>
+              <span style="font-size: 0.76rem; color: #94a3b8;">Fazilet Takvimi Günlük Tarihçe &amp; Olaylar</span>
+            </div>
+            <span class="k-events-month" id="kHistoryDateBadge" style="color: var(--k-gold); font-weight: 800;">Bugün</span>
+          </div>
+          
+          <!-- Dynamic Events Container -->
+          <div class="k-history-list" id="kHistoryContainer">
+            <div class="k-history-loading">
+              <span>⏳ Fazilet Takvimi tarihî olayları yükleniyor...</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- Bottom Ticker -->
+    <div class="k-ticker-wrap">
+      <span class="k-ticker-label">DUYURULAR</span>
+      <div class="k-ticker-text">
+        ✦ AHMEDİYE ENDERUN: 1972'den beri İzmir Bornova'da ilim, ahlâk, sanat ve teknoloji irfan yuvası. • İZBİTECH: 3D modelleme ve robotik atölyeleri. • AHSAN: Hüsn-i hat ve ebru çalışmaları. • AHENKK: Kitap tahlil meclisleri ve münazara ligi. • SOSET: Doğa kampları ve spor ligleri.
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/kiosk.js"></script>
+</body>
+</html>

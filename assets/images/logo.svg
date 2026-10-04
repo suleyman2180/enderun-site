@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 120" width="540" height="120">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF0B3"/>
+      <stop offset="25%" stop-color="#E2B755"/>
+      <stop offset="60%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#996E14"/>
+    </linearGradient>
+    <linearGradient id="navyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A8A"/>
+      <stop offset="45%" stop-color="#0F1F47"/>
+      <stop offset="100%" stop-color="#070D1F"/>
+    </linearGradient>
+    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Crest Icon -->
+  <g transform="translate(14, 10)" filter="url(#subtleShadow)">
+    <!-- Outer Shield / Ottoman Mihrab Arch & Dome -->
+    <path d="M 50,4 C 76,4 96,20 96,50 C 96,80 50,96 50,96 C 50,96 4,80 4,50 C 4,20 24,4 50,4 Z" 
+          fill="url(#navyGrad)" stroke="url(#goldGrad)" stroke-width="2.8"/>
+    
+    <!-- Inner Octagram Star (Seljuk/Ottoman 8-Pointed Star) -->
+    <path d="M 50,15 L 58,26 L 73,26 L 63,36 L 68,51 L 50,42 L 32,51 L 37,36 L 27,26 L 42,26 Z" 
+          fill="none" stroke="url(#goldGrad)" stroke-width="1.6" opacity="0.9" />
+    
+    <!-- Central Pen & Sacred Flame (Enderun / Ilm & Irfan Symbol) -->
+    <path d="M 50,25 C 54,34 57,42 57,51 C 57,60 50,67 50,67 C 50,67 43,60 43,51 C 43,42 46,25 50,25 Z" 
+          fill="url(#goldGrad)"/>
+    <circle cx="50" cy="49" r="3.2" fill="#070D1F"/>
+    
+    <!-- Ottoman Crest Crescent -->
+    <path d="M 35,73 C 44,83 56,83 65,73 C 58,78 42,78 35,73 Z" fill="url(#goldGrad)"/>
+    
+    <!-- Foundation Year: 1972 -->
+    <rect x="26" y="80" width="48" height="13" rx="3" fill="#070D1F" stroke="url(#goldGrad)" stroke-width="1"/>
+    <text x="50" y="89.5" font-family="'Plus Jakarta Sans', 'Segoe UI', serif" font-size="8.5" font-weight="800" fill="#FFF0B3" text-anchor="middle" letter-spacing="1.2">1972</text>
+  </g>
+
+  <!-- Typography -->
+  <!-- Main Title: AHMEDİYE ENDERUN -->
+  <text x="126" y="46" font-family="'Cinzel', 'Playfair Display', 'Times New Roman', serif" font-size="26" font-weight="800" fill="#FFFFFF" letter-spacing="2.5">
+    AHMEDİYE <tspan fill="url(#goldGrad)">ENDERUN</tspan>
+  </text>
+  
+  <!-- Subtitle: TALEBE YURDU -->
+  <text x="127" y="72" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" fill="url(#goldGrad)" letter-spacing="4.5">
+    TALEBE YURDU
+  </text>
+
+  <!-- Foundation & Heritage Badge -->
+  <g transform="translate(325, 60)">
+    <rect x="0" y="0" width="105" height="16" rx="8" fill="rgba(30,58,138,0.5)" stroke="url(#goldGrad)" stroke-width="0.8"/>
+    <text x="52.5" y="11.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="700" fill="#E2B755" text-anchor="middle" letter-spacing="1">KURULUŞ 1972</text>
+  </g>
+
+  <!-- Tagline: İlim • İrfan • Hikmet • Teknoloji -->
+  <text x="128" y="93" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="10" font-weight="500" fill="#94A3B8" letter-spacing="2">
+    İ L İ M  •  İ R F A N  •  S A N A T  •  T E K N O L O J İ
+  </text>
+
+  <!-- Elegant divider line with diamond center -->
+  <line x1="127" y1="78" x2="520" y2="78" stroke="url(#goldGrad)" stroke-width="0.9" opacity="0.4"/>
+  <polygon points="323,78 326,75 329,78 326,81" fill="#D4AF37"/>
+</svg>

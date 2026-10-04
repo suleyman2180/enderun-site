@@ -1,0 +1,80 @@
+[
+  {
+    "title": "Enderun İzbitech Wallpaper",
+    "src": "assets/images/enderun_izbitech_wallpaper.jpg",
+    "category": "yurt",
+    "filename": "enderun_izbitech_wallpaper.jpg"
+  },
+  {
+    "title": "Ahenkk Kitap Tahlil Meclisi",
+    "src": "assets/images/etkinlik/ahenkk-kitap-tahlil-meclisi.svg",
+    "category": "etkinlik",
+    "filename": "ahenkk-kitap-tahlil-meclisi.svg"
+  },
+  {
+    "title": "Ahsan Büyük Etkinlik",
+    "src": "assets/images/etkinlik/ahsan-buyuk-etkinlik.svg",
+    "category": "etkinlik",
+    "filename": "ahsan-buyuk-etkinlik.svg"
+  },
+  {
+    "title": "İzbitech Büyük Teknoloji Sergisi",
+    "src": "assets/images/etkinlik/izbitech-buyuk-teknoloji-sergisi.svg",
+    "category": "etkinlik",
+    "filename": "izbitech-buyuk-teknoloji-sergisi.svg"
+  },
+  {
+    "title": "İzbitech Wallpaper",
+    "src": "assets/images/izbitech_wallpaper.jpg",
+    "category": "yurt",
+    "filename": "izbitech_wallpaper.jpg"
+  },
+  {
+    "title": "Ahenkk Kulüp Odası",
+    "src": "assets/images/kulupoda/ahenkk-kulup-odasi.jpg",
+    "category": "odalar",
+    "filename": "ahenkk-kulup-odasi.jpg"
+  },
+  {
+    "title": "Ahsan Kulüp Odası",
+    "src": "assets/images/kulupoda/ahsan-kulup-odasi.jpg",
+    "category": "odalar",
+    "filename": "ahsan-kulup-odasi.jpg"
+  },
+  {
+    "title": "İzbitech Kulüp Odası",
+    "src": "assets/images/kulupoda/izbitech-kulup-odasi.jpg",
+    "category": "odalar",
+    "filename": "izbitech-kulup-odasi.jpg"
+  },
+  {
+    "title": "Soset Kulüp Odası",
+    "src": "assets/images/kulupoda/soset-kulup-odasi.jpg",
+    "category": "odalar",
+    "filename": "soset-kulup-odasi.jpg"
+  },
+  {
+    "title": "Soset",
+    "src": "assets/images/yurt/soset.png",
+    "category": "yurt",
+    "filename": "soset.png"
+  },
+  {
+    "title": "Yurt Bahçe Yerleşkesi",
+    "src": "assets/images/yurt/yurt-bahce-yerleskesi.jpg",
+    "category": "yurt",
+    "filename": "yurt-bahce-yerleskesi.jpg"
+  },
+  {
+    "title": "Yurt Etüt Salonu",
+    "src": "assets/images/yurt/yurt-etut-salonu.jpg",
+    "category": "yurt",
+    "filename": "yurt-etut-salonu.jpg"
+  },
+  {
+    "title": "Yurt Ön Cephe 2026 Ekim",
+    "src": "assets/images/yurt/yurt-on-cephe-2026-ekim.jpg",
+    "category": "yurt",
+    "filename": "yurt-on-cephe-2026-ekim.jpg"
+  }
+]
