@@ -95,6 +95,42 @@
       box-shadow: var(--shadow-lg), 0 0 50px rgba(212, 175, 55, 0.25);
       position: relative;
     }
+    .container-narrow.registration-closed {
+      position: relative;
+    }
+    .registration-closed .app-form-wrapper {
+      filter: blur(7px);
+      opacity: 0.48;
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .registration-closed-notice {
+      position: absolute;
+      z-index: 20;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: min(90%, 560px);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border: 1px solid rgba(212, 175, 55, 0.7);
+      border-radius: 20px;
+      background: rgba(7, 13, 31, 0.92);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .registration-closed-notice h2 {
+      margin: 0 0 0.75rem;
+      color: var(--gold-400);
+      font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+    .registration-closed-notice p {
+      margin: 0;
+      color: #e2e8f0;
+      line-height: 1.7;
+    }
   </style>
 </head>
 <body>
@@ -146,7 +182,7 @@
   <section class="section-padding">
     <div class="container container-narrow">
       
-      <div class="app-form-wrapper">
+      <div class="app-form-wrapper" inert aria-hidden="true">
         
         <!-- Step Indicators (3 Adım) -->
         <div class="wizard-steps-header">
